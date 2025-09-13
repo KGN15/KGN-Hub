@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - KGN Hub</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+    <!-- 3D Banner Section with Particles -->
+    <section class="banner">
+        <canvas id="particles"></canvas>
+        <div class="banner-content">
+            <h1 class="banner-title">KGN Hub Privacy Policy</h1>
+            <p class="banner-subtitle">Your privacy matters to us — always protected, always secure.</p>
+        </div>
+    </section>
+
+    <header class="header animate-fade">
+        <h1 class="title">Privacy Policy</h1>
+        <p class="subtitle">Your Privacy is Our Priority</p>
+    </header>
+
+    <main class="content">
+        <section class="animate-slide">
+            <p>At <strong>KGN Hub</strong>, your privacy is our top priority. This Privacy Policy explains how we collect, use, and protect your personal information when you visit our website.</p>
+        </section>
+
+        <section class="animate-slide">
+            <h2>1. Information We Collect</h2>
+            <p>We only collect information that you voluntarily provide to us, such as your name, email address, and any other details you submit through forms on our website.</p>
+        </section>
+
+        <section class="animate-slide">
+            <h2>2. How We Use Your Information</h2>
+            <ul>
+                <li>To communicate with you effectively</li>
+                <li>To improve our website and services</li>
+                <li>To analyze website traffic and user behavior</li>
+                <li>To send you updates, newsletters, and promotional materials (only if you opt-in)</li>
+            </ul>
+        </section>
+
+        <section class="animate-slide">
+            <h2>3. Cookies</h2>
+            <p>Our website may use cookies to enhance your browsing experience. You can control or disable cookies through your browser settings; however, doing so may affect some features of the site.</p>
+        </section>
+
+        <section class="animate-slide">
+            <h2>4. Data Security</h2>
+            <p>We implement appropriate technical and organizational measures to safeguard your personal data from unauthorized access, disclosure, or alteration.</p>
+        </section>
+
+        <section class="animate-slide">
+            <h2>5. Sharing of Information</h2>
+            <p>We do not sell, trade, or rent your personal information to third parties. However, we may share your information if required by law or to protect our rights.</p>
+        </section>
+
+        <section class="animate-slide">
+            <h2>6. Third-Party Links and Resources</h2>
+            <p>Some resources, including downloadable files and Google Drive links, are shared on our website. We always provide proper credit to the original creators or sources of these resources. Please note that we do not own these third-party contents, and we are not responsible for their availability or any issues related to them.</p>
+        </section>
+
+        <section class="animate-slide">
+            <h2>7. Your Rights</h2>
+            <p>You have the right to access, correct, or request deletion of your personal data. Please contact us if you wish to exercise these rights.</p>
+        </section>
+
+        <section class="animate-slide">
+            <h2>8. Contact Us</h2>
+            <p>If you have any questions or concerns about this Privacy Policy, please reach out to us:</p>
+            <p>Email: <a href="mailto:mdmashudurr81@gmail.com">mdmashudurr81@gmail.com</a></p>
+            <p>Phone: <a href="tel:+8801996525342">+880 1996525342</a></p>
+        </section>
+    </main>
+
+    <footer class="footer animate-fade">
+        <p>&copy; 2025 KGN Hub | All Rights Reserved</p>
+    </footer>
+
+    <script>
+        // Scroll Animation
+        const elements = document.querySelectorAll('.animate-slide, .animate-fade');
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting){
+                    entry.target.classList.add('show');
+                }
+            });
+        }, { threshold: 0.1 });
+        elements.forEach(el => observer.observe(el));
+
+        // Particle Animation
+        const canvas = document.getElementById('particles');
+        const ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth;
+        canvas.height = document.querySelector('.banner').offsetHeight;
+
+        const particlesArray = [];
+        const particleCount = 50;
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 4 + 1;
+                this.speedX = (Math.random() - 0.5) * 1.5;
+                this.speedY = (Math.random() - 0.5) * 1.5;
+            }
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+
+                if (this.size > 0.2) this.size -= 0.01;
+                if (this.x < 0 || this.x > canvas.width) this.speedX *= -1;
+                if (this.y < 0 || this.y > canvas.height) this.speedY *= -1;
+            }
+            draw() {
+                ctx.fillStyle = 'rgba(255,255,255,0.8)';
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
+
+        function initParticles() {
+            for (let i = 0; i < particleCount; i++) {
+                particlesArray.push(new Particle());
+            }
+        }
+
+        function animateParticles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particlesArray.forEach(p => {
+                p.update();
+                p.draw();
+            });
+            requestAnimationFrame(animateParticles);
+        }
+
+        initParticles();
+        animateParticles();
+
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = document.querySelector('.banner').offsetHeight;
+        });
+    </script>
+</body>
+</html>

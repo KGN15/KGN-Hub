@@ -1,0 +1,350 @@
+  * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Rubik', sans-serif;
+  background: linear-gradient(270deg, #000000, #420011, #000000, #3a000a, #000000, #35000c, #000000);
+  background-size: 1000% 1000%;
+  animation: animatedBackground 9s ease infinite;
+  color: #fff;
+}
+
+@keyframes animatedBackground {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+    h2.section-title {
+      font-size: 1.8rem;
+      text-align: center;
+      margin: 2rem 0 1rem;
+      color: #ffffff;
+      text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
+    }
+    .resource-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      padding: 0 1rem 2rem;
+    }
+    .resource-card {
+      background: transparent;
+      border: 1px solid #2b2b2b;
+      border-radius: 10px;
+      padding: 1.2rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease;
+    }
+    .resource-card:hover {
+      transform: translateY(-5px);
+    }
+    .resource-card h3 {
+      color: #ff003c;
+      margin-bottom: 0.5rem;
+    }
+    .btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.6rem 1.2rem;
+  background: linear-gradient(45deg, #ff003c, #3b3b3b, #000000);
+  color: white;
+  font-weight: 600;
+  border-radius: 5px;
+  text-decoration: none;
+  border: 2px solid transparent;  /* 2px বরডার */
+  position: relative;
+  z-index: 0;
+  transition: background 0.3s, transform 0.3s ease;
+}
+
+/* Animate border with glowing colors - একটু চিকন */
+.btn::before {
+  content: "";
+  position: absolute;
+  top: -1.5px;    /* আগের -3px এর জায়গায় -2px */
+  left: -1.5px;
+  right: -1.5px;
+  bottom: -1.5px;
+  border-radius: 5px;  /* একটু কম গোলাকার */
+  background: linear-gradient(270deg, red, green, blue, yellow, white, red);
+  background-size: 1200% 1200%;
+  animation: glowingBorder 10s linear infinite;
+  z-index: -1;
+}
+
+/* Inner layer to cover the button background behind border */
+.btn::after {
+  content: "";
+  position: absolute;
+  top: 1.5px;    /* আগের 3px এর জায়গায় 2px */
+  left: 1.5px;
+  right: 1.5px;
+  bottom: 1.5px;
+  background: linear-gradient(45deg, #ff003c, #3b3b3b, #000000);
+  border-radius: 5px;
+  z-index: -1;
+}
+
+@keyframes glowingBorder {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.btn:hover {
+  transform: scale(1.1);
+  background: linear-gradient(45deg, #cc002f, #2b2b2b, #111111);
+}
+
+/* মোবাইলে hover effect বন্ধ */
+@media (hover: none), (pointer: coarse) {
+  .btn:hover {
+    transform: none;
+    background: linear-gradient(45deg, #ff003c, #3b3b3b, #000000);
+  }
+}
+
+    footer {
+      background: transparent;
+      padding: 2rem 1rem;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+    .footer-btn {
+      display: inline-block;
+      margin: 0 0.5rem;
+      color: #aaa;
+      text-decoration: none;
+    }
+    .footer-btn:hover {
+      text-decoration: underline;
+      color: #fff;
+    }
+    @media (max-width: 600px) {
+      h2.section-title {
+        font-size: 1.4rem;
+      }
+    }
+        body {
+      margin: 0;
+      background-color: #0d0d0d;
+      font-family: 'Rubik', sans-serif;
+    }
+
+    .site-header h1 {
+      width: 100%;
+      text-align: center;
+      padding: 2rem 1rem;
+      background-color: #0d0d0d;
+    }
+
+   .site-logo-text {
+  font-size: 6rem; /* auto-scale font size */
+  font-weight: 800;
+  background: linear-gradient(45deg, #ff003c, #00ffcc, #ffcc00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
+  animation: glow 2s infinite alternate;
+  text-align: center;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px #ff003c;
+  }
+  to {
+    text-shadow: 0 0 20px #00ffcc, 0 0 30px #ffcc00;
+  }
+}
+    @media (max-width: 600px) {
+      .site-logo-text {
+        font-size: 2rem;
+      }
+    }
+    .resource-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+  padding: 0 1rem 2rem;
+  justify-content: center; /* মাঝখানে রাখতে */
+  max-width: 1200px;        /* বেশি বড় স্ক্রিনে সেন্টার */
+  margin: 0 auto;
+}
+.resource-card {
+  background: transparent;  /* opacity কমিয়ে হালকা কালো */
+  border: 2px solid;                   /* বর্ডার একটু মোটা করলাম */
+  border-image-slice: 1;
+  border-width: 2px;
+  border-image-source: linear-gradient(45deg, #ff003c, #3b3b3b, #000000); /* RJB গ্র্যাডিয়েন্ট বর্ডার */
+  border-radius: 10px;
+  padding: 1.2rem;
+  box-shadow: 0 6px 15px rgba(255, 0, 60, 0.3); /* হালকা রেড শেডো */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-width: 350px;
+  margin: 0 auto;
+}
+
+.resource-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(255, 0, 60, 0.6);
+}
+
+@media (max-width: 600px) {
+  .resource-grid {
+    grid-template-columns: 1fr;
+    padding: 0 0.5rem 1rem;
+  }
+
+  .resource-card {
+    max-width: 100%;
+  }
+}
+.resource-card {
+  position: relative;
+  background: transparent;
+  border-radius: 10px;
+  padding: 1.2rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+  border: 2px solid transparent; /* চিকন বর্ডার */
+  z-index: 0;
+  overflow: hidden;
+}
+
+.resource-card::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border-radius: 12px; /* কার্ডের বর্ডার গোলাকৃতির জন্য */
+  background: transparent;
+  background-size: 1200% 1200%;
+  animation: glowingBorder 10s linear infinite;
+  z-index: -1;
+}
+
+.resource-card::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  right: 2px;
+  bottom: 2px;
+  background: transparent; /* কার্ডের মূল ব্যাকগ্রাউন্ড */
+  border-radius: 8px;
+  z-index: -1;
+}
+
+.resource-card:hover {
+  transform: translateY(-5px);
+}
+
+@keyframes glowingBorder {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+.footer-btn {
+  display: inline-block;
+  margin: 0.5rem;
+  padding: 0.6rem 1.4rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: white;
+  text-decoration: none;
+  border-radius: 12px; /* হালকা গোল করলাম */
+  background: linear-gradient(45deg, red, green, blue, rgb(255, 0, 0), white);
+  background-size: 300% 300%;
+  animation: footerGradient 5s infinite alternate;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 5px rgba(255,255,255,0.2);
+}
+
+.footer-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.7);
+}
+
+@keyframes footerGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+.site-header {
+  position: sticky;
+  top: 0;
+  background-color: transparent;
+  z-index: 999;
+  padding: 0.5rem 0;
+}
+.site-header p {
+  color: white;
+  margin: 0;
+  font-size: 1.5rem;
+  text-shadow: #000000;
+}
+@media (max-width: 600px) {
+  .site-logo-text {
+    font-size: 4rem;
+  }
+}
+.site-header-mobile p {
+  text-align: center;
+  top: 0;
+  background-color: transparent;
+  z-index: 999;
+  padding: 0.5rem 0;
+}
+@keyframes border-flash {
+  0% {
+    border-color: white;
+    box-shadow: 0 0 10px white;
+  }
+  50% {
+    border-color: black;
+    box-shadow: 0 0 10px black;
+  }
+  100% {
+    border-color: white;
+    box-shadow: 0 0 10px white;
+  }
+}
+
+.resource-card {
+  border: 2px solid white;
+  animation: border-flash 2s infinite;
+  transition: transform 0.3s ease;
+  background: transparent; /* চাইলে ব্যাকগ্রাউন্ড রিমুভ রাখো */
+}

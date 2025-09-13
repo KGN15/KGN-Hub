@@ -1,0 +1,143 @@
+/* ========== Google Font ========== */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+/* Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    background: linear-gradient(135deg, #f0f4ff, #dfe9f3);
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+/* Heading */
+h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #004aad;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+p.intro {
+    text-align: center;
+    color: #555;
+    margin-bottom: 30px;
+    font-size: 1.1rem;
+}
+
+/* Container */
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(8px);
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Scrollable job list */
+.job-list {
+    max-height: 650px;
+    overflow-y: auto;
+    padding-right: 15px;
+}
+
+.job-list::-webkit-scrollbar {
+    width: 8px;
+}
+.job-list::-webkit-scrollbar-track {
+    background: #e6e6e6;
+    border-radius: 10px;
+}
+.job-list::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #004aad, #0077ff);
+    border-radius: 10px;
+}
+
+/* Job Item */
+.job {
+    background: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.job:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.job h2 {
+    font-size: 1.5rem;
+    color: #004aad;
+    margin-bottom: 10px;
+}
+
+.job p,
+.job ul {
+    color: #555;
+}
+
+.job ul {
+    margin-left: 20px;
+}
+
+.job ul li {
+    margin-bottom: 5px;
+}
+
+/* Table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+table thead {
+    background: linear-gradient(90deg, #004aad, #0077ff);
+    color: white;
+}
+
+table th, table td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+table tbody tr:nth-child(even) {
+    background: #f3f8ff;
+}
+
+table tbody tr:hover {
+    background: #eaf2ff;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    body {
+        padding: 15px;
+    }
+    h1 {
+        font-size: 2rem;
+    }
+    .job h2 {
+        font-size: 1.2rem;
+    }
+    table th, table td {
+        font-size: 0.9rem;
+        padding: 8px;
+    }
+}

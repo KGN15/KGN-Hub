@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us | KGN Hub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(-45deg, #0f0c29, #302b63, #24243e);
+      background-size: 400% 400%;
+      animation: bgShift 20s ease infinite;
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+    }
+
+    @keyframes bgShift {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+
+    .contact-card {
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(15px);
+      border-radius: 20px;
+      padding: 40px 30px;
+      width: 100%;
+      max-width: 800px;
+      box-shadow: 0 0 25px rgba(0, 255, 255, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .contact-card h1 {
+      font-size: 36px;
+      color: #00ffe5;
+      margin-bottom: 25px;
+      text-align: center;
+      text-shadow: 0 0 10px #00ffe5;
+    }
+
+    .contact-card p {
+      font-size: 16px;
+      line-height: 1.6;
+      margin-bottom: 16px;
+      text-align: center;
+    }
+
+    .contact-info {
+      margin-top: 30px;
+    }
+
+    .contact-info div {
+      margin-bottom: 15px;
+      font-weight: 600;
+      color: #ffeb3b;
+      text-align: center;
+    }
+
+    .contact-info a {
+      color: #00ffe5;
+      text-decoration: none;
+      transition: 0.3s ease;
+    }
+
+    .contact-info a:hover {
+      color: #ff00ff;
+      text-shadow: 0 0 8px #ff00ff;
+    }
+
+    .features {
+      margin-top: 30px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding-top: 20px;
+    }
+
+    .features p {
+      margin: 10px 0;
+      font-size: 15px;
+      color: #d0faff;
+    }
+
+    .features p::before {
+      content: '✔ ';
+      color: #00ff99;
+    }
+
+    @media (max-width: 600px) {
+      .contact-card {
+        padding: 30px 20px;
+      }
+
+      .contact-card h1 {
+        font-size: 28px;
+      }
+
+      .features p {
+        font-size: 14px;
+      }
+    }
+  </style>
+
+</head>
+<body>
+  <div class="contact-card">
+    <h1>📞 Contact Us / Help Line</h1>
+
+    <p><strong>English:</strong><br>
+    Have any questions, need help, or want to collaborate?<br>
+    We’re here for you 24/7 – just a call, message, or click away.</p>
+
+    <p><strong>Bangla:</strong><br>
+    যেকোনো প্রশ্ন, সাহায্য বা সহযোগিতার জন্য আমাদের সাথে যোগাযোগ করুন।<br>
+    আমরা ২৪/৭ আপনার সাপোর্টে প্রস্তুত।</p>
+
+    <div class="contact-info">
+      <div>📱 ফোন: <a href="tel:+8801996525342">+880 1996-525342</a></div>
+      <div>📧 ইমেল: <a href="mailto:mdmashudurr81@gmail.com">mdmashudurr81@gmail.com</a></div>
+      <div>👤 ফেসবুক প্রোফাইল/Facebook profile: <a href="https://www.facebook.com/mukuta.chara.raja.2025">এখানে ক্লিক করুন</a></div>
+      <div>👥 ফেসবুক গ্রুপ/facebook groups: <a href="https://www.facebook.com/groups/2037642393432629">এখানে ক্লিক করুন</a></div>
+    </div>
+</body>
+</html>

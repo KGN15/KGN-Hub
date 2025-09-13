@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & Signup Form</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', sans-serif;
+            box-sizing: border-box;
+        }
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+        #particles-js {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: linear-gradient(135deg, #ff105f, #ffad06);
+        }
+        .container {
+            width: 380px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            padding: 20px;
+            box-shadow: 0 0 30px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        .button-box {
+            width: 220px;
+            margin: 20px auto;
+            position: relative;
+            background: rgba(255,255,255,0.1);
+            border-radius: 30px;
+        }
+        .toggle-btn {
+            padding: 10px 30px;
+            cursor: pointer;
+            background: transparent;
+            border: none;
+            outline: none;
+            color: white;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        #btn {
+            position: absolute;
+            width: 110px;
+            height: 100%;
+            background: linear-gradient(135deg, #ff105f, #ffad06);
+            border-radius: 30px;
+            transition: 0.5s;
+        }
+        .input-group {
+            position: absolute;
+            width: 80%;
+            transition: 0.5s;
+        }
+        .input-field {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 8px;
+            outline: none;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+        }
+        .input-field::placeholder {
+            color: #ddd;
+        }
+        .check-box {
+            margin-right: 5px;
+        }
+        label {
+            color: white;
+            font-size: 13px;
+        }
+        .submit-btn {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(135deg, #ff105f, #ffad06);
+            border: none;
+            border-radius: 8px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .submit-btn:hover {
+            transform: scale(1.05);
+        }
+        #login {
+            left: 40px;
+        }
+        #signup {
+            left: 450px;
+        }
+        @media (max-width: 420px) {
+            .container {
+                width: 90%;
+            }
+            .button-box {
+                width: 180px;
+            }
+            .toggle-btn {
+                padding: 8px 20px;
+            }
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+</head>
+<body>
+
+<div id="particles-js"></div>
+
+<div class="container">
+    <div class="form-box">
+        <div class="button-box">
+            <div id="btn"></div>
+            <button type="button" class="toggle-btn" onclick="login()">লগইন</button>
+            <button type="button" class="toggle-btn" onclick="signup()">সাইন আপ</button>
+        </div>
+
+        <form id="login" class="input-group">
+            <input type="text" class="input-field" placeholder="ইউজারনেম" required>
+            <input type="password" class="input-field" placeholder="পাসওয়ার্ড" required>
+            <label><input type="checkbox" class="check-box"> আমাকে মনে রাখুন</label>
+            <button type="submit" class="submit-btn">লগইন</button>
+        </form>
+
+        <form id="signup" class="input-group">
+            <input type="text" class="input-field" placeholder="ইউজারনেম" required>
+            <input type="email" class="input-field" placeholder="ইমেইল" required>
+            <input type="password" class="input-field" placeholder="পাসওয়ার্ড" required>
+            <label><input type="checkbox" class="check-box"> শর্তাবলীতে সম্মত</label>
+            <button type="submit" class="submit-btn">সাইন আপ</button>
+        </form>
+    </div>
+</div>
+
+<script>
+let loginForm = document.getElementById("login");
+let signupForm = document.getElementById("signup");
+let btn = document.getElementById("btn");
+
+function login() {
+    loginForm.style.left = "40px";
+    signupForm.style.left = "450px";
+    btn.style.left = "0px";
+}
+function signup() {
+    loginForm.style.left = "-400px";
+    signupForm.style.left = "40px";
+    btn.style.left = "110px";
+}
+
+particlesJS("particles-js", {
+    "particles": {
+        "number": { "value": 80 },
+        "size": { "value": 3 },
+        "move": { "speed": 2 },
+        "line_linked": { "enable": true },
+        "color": { "value": "#ffffff" }
+    }
+});
+</script>
+
+</body>
+</html>

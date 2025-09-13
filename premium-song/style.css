@@ -1,0 +1,204 @@
+/* ==== BASIC RESET ==== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ==== BODY & BACKGROUND ==== */
+body {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 40px 20px;
+  z-index: 1;
+
+  /* ব্যাকগ্রাউন্ড অ্যানিমেশন */
+  background: linear-gradient(270deg, #000000, #ffffff, #000000);
+  background-size: 600% 600%;
+  animation: gradientShift 20s ease infinite;
+  overflow: hidden;
+}
+
+/* গ্রেডিয়েন্ট শিফট অ্যানিমেশন */
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+main {
+  max-width: 1200px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* আগের 380px বদলে 250px */
+  gap: 20px; /* gap ছোট করলাম */
+}
+
+.card {
+  padding: 20px; /* ছোট স্ক্রিনে padding কম */
+}
+
+/* ==== ছোট স্ক্রিনের জন্য মিডিয়া কুয়েরি ==== */
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 2.2rem;
+  }
+  header p {
+    font-size: 1.2rem;
+  }
+  .card h2 {
+    font-size: 1.4rem;
+  }
+  .info {
+    font-size: 1rem;
+  }
+  .link-btn {
+    font-size: 1rem;
+    padding: 12px 16px;
+  }
+}
+
+/* ==== লাইট স্পট যা মাউস অনুসরণ করবে ==== */
+body::before {
+  content: '';
+  position: fixed;
+  top: var(--mouseY, 50%);
+  left: var(--mouseX, 50%);
+  transform: translate(-50%, -50%);
+  width: 300px;
+  height: 300px;
+  pointer-events: none;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 80%);
+  mix-blend-mode: screen;
+  transition: top 0.1s ease, left 0.1s ease;
+}
+
+/* ==== HEADER ==== */
+header {
+  text-align: center;
+  margin-bottom: 50px;
+  transform: perspective(1000px) rotateX(5deg);
+}
+header h1 {
+  font-size: 4rem;
+  color: #f8f9fa;
+  margin-bottom: 12px;
+  letter-spacing: 2px;
+  text-shadow: 4px 4px 12px rgba(0, 0, 0, 0.6);
+}
+header p {
+  font-size: 1.6rem;
+  color: #ddd;
+  font-weight: 500;
+}
+
+/* ==== MAIN GRID ==== */
+main {
+  max-width: 1200px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+  gap: 40px;
+}
+
+/* ==== CARD STYLE ==== */
+.card {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 24px;
+  box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.3),
+    -10px -10px 25px rgba(255, 255, 255, 0.1);
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.3s ease;
+  transform-style: preserve-3d;
+  backdrop-filter: blur(10px);
+}
+.card:hover {
+  transform: translateY(-14px) scale(1.07) rotateX(5deg) rotateY(3deg);
+  box-shadow: 20px 20px 40px rgba(0, 0, 0, 0.4),
+    -10px -10px 25px rgba(255, 255, 255, 0.2);
+}
+
+/* ==== RESOURCE NAME ==== */
+.card h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #fff;
+  font-weight: bold;
+  line-height: 1.3;
+}
+
+/* ==== INFO / CREDIT ==== */
+.info {
+  font-size: 1.4rem;
+  color: #f0f0f0;
+  margin-bottom: 28px;
+  line-height: 1.8;
+}
+
+/* ==== BUTTON ==== */
+.link-btn {
+  text-decoration: none;
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  color: white;
+  padding: 20px 26px;
+  border-radius: 14px;
+  font-weight: 700;
+  font-size: 1.4rem;
+  text-align: center;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  transform: perspective(500px) translateZ(10px);
+}
+.link-btn:hover {
+  background: linear-gradient(135deg, #0056b3, #004099);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  transform: perspective(500px) translateZ(20px) scale(1.08);
+}
+
+/* ==== FOOTER ==== */
+footer {
+  margin-top: 70px;
+  font-size: 1rem;
+  color: #ccc;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+}
+/* কার্ডের টাইটেল ও ইনফো টেক্সট ফন্ট আপডেট */
+.card h2 {
+  font-family: 'Roboto', 'Roboto Black', 'Roboto Bold', sans-serif;
+  font-weight: 900;
+  font-size: 2.8rem;
+  margin-bottom: 20px;
+  color: #222222; /* কালো টেক্সটের হালকা শেড */
+  text-shadow: 0 0 8px rgba(0, 0, 0, 0.6); /* কালো গ্লো */
+  line-height: 1.3;
+}
+
+.card .info {
+  font-family: 'Roboto', 'Roboto Medium', sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: #333333; /* একটু হালকা কালো */
+  text-shadow: 0 0 6px rgba(0, 0, 0, 0.4); /* হালকা কালো গ্লো */
+  margin-bottom: 28px;
+  line-height: 1.8;
+}
+html, body {
+  height: auto;
+  min-height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+}

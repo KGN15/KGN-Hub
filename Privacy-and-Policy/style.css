@@ -1,0 +1,258 @@
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    color: white;
+    line-height: 1.8;
+    overflow-x: hidden;
+}
+
+/* ===== 3D Banner ===== */
+.banner {
+    height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(120deg, #00e6ff, #ff00cc, #ff9900);
+    background-size: 300% 300%;
+    animation: gradientFlow 6s infinite alternate;
+    box-shadow: 0 0 40px rgba(0,0,0,0.5);
+    position: relative;
+    z-index: 2;
+}
+
+@keyframes gradientFlow {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+
+.banner-content {
+    z-index: 3;
+}
+
+.banner-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-shadow: 0 0 15px rgba(0,0,0,0.6);
+}
+
+.banner-subtitle {
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+/* ===== Header ===== */
+.header {
+    text-align: center;
+    padding: 40px 20px;
+    background: linear-gradient(145deg, #1b1b1b, #2a2a2a);
+    border-bottom: 4px solid transparent;
+    border-image: linear-gradient(90deg, #00e6ff, #ff00cc) 1;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+}
+
+.title {
+    font-size: 2.8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background: linear-gradient(90deg, #00e6ff, #ff00cc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: glow 3s infinite alternate;
+}
+
+@keyframes glow {
+    0% { text-shadow: 0 0 15px #00e6ff; }
+    100% { text-shadow: 0 0 25px #ff00cc; }
+}
+
+.subtitle {
+    font-size: 1rem;
+    opacity: 0.8;
+}
+
+/* ===== Content ===== */
+.content {
+    max-width: 900px;
+    margin: auto;
+    padding: 30px;
+}
+
+.content section {
+    margin-bottom: 30px;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    border-radius: 15px;
+    backdrop-filter: blur(5px);
+    border: 2px solid transparent;
+    background-clip: padding-box;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.4), 0 0 20px rgba(0, 230, 255, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+}
+
+.content section:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.6), 0 0 25px rgba(255, 0, 204, 0.4);
+    border: 2px solid #00e6ff;
+}
+
+.content h2 {
+    font-size: 1.5rem;
+    color: #00e6ff;
+    margin-bottom: 10px;
+}
+
+.content p, .content li {
+    font-size: 1rem;
+    color: #e6e6e6;
+}
+
+ul {
+    padding-left: 20px;
+}
+
+a {
+    color: #ff00cc;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* ===== Footer ===== */
+.footer {
+    text-align: center;
+    padding: 20px;
+    background: #111;
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: #ccc;
+}
+
+/* ===== Animations ===== */
+.animate-slide {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+
+.animate-slide.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.animate-fade {
+    opacity: 0;
+    transition: opacity 1s ease-out;
+}
+
+.animate-fade.show {
+    opacity: 1;
+}
+/* 3D Banner */
+.banner {
+    height: 250px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(120deg, #00e6ff, #ff00cc, #ff9900);
+    background-size: 300% 300%;
+    animation: gradientFlow 6s infinite alternate;
+    box-shadow: 0 0 40px rgba(0,0,0,0.5);
+}
+
+#particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.banner-content {
+    z-index: 2;
+    color: white;
+    padding: 20px;
+}
+
+.banner-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-shadow: 0 0 15px rgba(0,0,0,0.6);
+}
+
+.banner-subtitle {
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+@keyframes gradientFlow {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+/* ===== Policy Cards ===== */
+.content section {
+    margin-bottom: 30px;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    border-radius: 15px;
+    backdrop-filter: blur(5px);
+    border: 2px solid transparent;
+    background-clip: padding-box;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.4), 0 0 20px rgba(0, 230, 255, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    
+    /* New Animation Features */
+    animation: borderGlow 4s linear infinite, pulseEffect 3s ease-in-out infinite;
+}
+
+/* Hover Effect Upgrade */
+.content section:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.6), 0 0 25px rgba(255, 0, 204, 0.4);
+    border: 2px solid #00e6ff;
+}
+
+/* Shining Glow Border Animation */
+@keyframes borderGlow {
+    0% {
+        border-color: #00e6ff;
+        box-shadow: 0 0 10px #00e6ff;
+    }
+    25% {
+        border-color: #ff00cc;
+        box-shadow: 0 0 15px #ff00cc;
+    }
+    50% {
+        border-color: #ff9900;
+        box-shadow: 0 0 10px #ff9900;
+    }
+    75% {
+        border-color: #00ff88;
+        box-shadow: 0 0 15px #00ff88;
+    }
+    100% {
+        border-color: #00e6ff;
+        box-shadow: 0 0 10px #00e6ff;
+    }
+}
+
+/* Pulse Effect (Subtle Glow) */
+@keyframes pulseEffect {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.01); }
+    100% { transform: scale(1); }
+}
